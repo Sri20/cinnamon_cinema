@@ -5,8 +5,8 @@ const main = inputseats => {
 const empty = 0
 const filled =1
 
-let seatmap =  [{row:'A',seatnum:[0,0,0,0,0]}]
-  //              {row:'B',seatnum:[0,0,0,0,0]},
+let seatmap =  [{row:'A',seatnum:[0,0,0,0,0]},
+               {row:'B',seatnum:[0,0,0,0,0]}]
    //             {row:'C',seatnum:[0,0,0,0,0] }]
 result=[]
 inputseats.forEach((customer) => {
@@ -14,21 +14,17 @@ numofseats = customer
 //if (enoughSeatspresent(numofseats)){
     resultOnecustomer = []
 while (numofseats>0){
- 
     seatmap.forEach((eachrow) => {
         eachrow.seatnum.forEach((seat,index) => {
             if (seat == 0 && numofseats>0){
                 eachrow.seatnum[index]=filled
-                //console.log(eachrow.row + (index+1))
                 resultOnecustomer.push(eachrow.row + (index+1))
                 numofseats--
             }   
         })
     })
 }
-console.log(resultOnecustomer)
 result.push(resultOnecustomer.toString())
-console.log(result)
 })
 
 /*
