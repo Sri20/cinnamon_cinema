@@ -1,0 +1,23 @@
+{
+  "name": "cinnamon_cinema",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "program to allocate seats to a customer",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sri20/cinnamon_cinema.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sri20/cinnamon_cinema/issues"
+  },
+  "homepage": "https://github.com/Sri20/cinnamon_cinema#readme",
+  "dependencies": {
+    "jest": "^27.3.1"
+  }
+}
