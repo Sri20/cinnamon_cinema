@@ -6,8 +6,8 @@ const empty = 0
 const filled =1
 
 let seatmap =  [{row:'A',seatnum:[0,0,0,0,0]},
-            {row:'B',seatnum:[0,0,0,0,0]}]
-      //      {row:'C',seatnum:[0,0,0,0,0] }]
+            {row:'B',seatnum:[0,0,0,0,0]},
+            {row:'C',seatnum:[0,0,0,0,0] }]
 result=[]
 inputseats.forEach((customer) => {
 numofseats = customer
