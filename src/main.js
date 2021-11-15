@@ -1,12 +1,69 @@
-const main = numberOfseats => {
-console.log(numberOfseats)
-//seatmap = { rowA : [A1,A2,A3,A4,A5] }
-let seatmap = {row:'A',seatno: ['1','2']}
-if (numberOfseats==1)    {
-    return seatmap.row+seatmap.seatno[0]
+
+
+const main = inputseats => {
+//console.log(numberOfseats)
+const empty = 0
+const filled =1
+
+let seatmap =  [{row:'A',seatnum:[0,0,0,0,0]}]
+  //              {row:'B',seatnum:[0,0,0,0,0]},
+   //             {row:'C',seatnum:[0,0,0,0,0] }]
+result=[]
+inputseats.forEach((customer) => {
+numofseats = customer
+//if (enoughSeatspresent(numofseats)){
+    resultOnecustomer = []
+while (numofseats>0){
+ 
+    seatmap.forEach((eachrow) => {
+        eachrow.seatnum.forEach((seat,index) => {
+            if (seat == 0 && numofseats>0){
+                eachrow.seatnum[index]=filled
+                //console.log(eachrow.row + (index+1))
+                resultOnecustomer.push(eachrow.row + (index+1))
+                numofseats--
+            }   
+        })
+    })
+}
+console.log(resultOnecustomer)
+result.push(resultOnecustomer.toString())
+console.log(result)
+})
+
+/*
+
+if (customerseat==1)    {
+
+    result.push(seatmap.row+seatmap.seatnum[0])
+   
+    seatmap.seatno[0] =filled
+
+    console.log(seatmap)
 }  
 else {
-    return seatmap.row+seatmap.seatno[0]+' '+seatmap.row+seatmap.seatno[1]
+    result.push( seatmap.row+Object.keys(seatmap.seatno[0])+' '+
+    seatmap.row+Object.keys(seatmap.seatno[1]))
 }  
+})*/
+//console.log(seatmap)
+return result
 }
+/*
+
+enoughSeatspresent((numofseats) => {
+    seatsfree = 0;
+    seatmap.forEach((row) =>{
+        seatsfree += row.filter((seatnum) => seatnum==0)
+    })
+    if (seatsfree ==numofseats)
+    {
+        return true
+    }
+    else{
+        return false
+    // set error indicator
+    }
+
+})*/
 module.exports = main
