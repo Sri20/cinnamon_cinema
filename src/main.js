@@ -1,6 +1,6 @@
 const main = numberOfseats => {
 console.log(numberOfseats)
 
-return
+return ['A1']
 }
 module.exports = main
