@@ -11,7 +11,10 @@ let seatmap =  [{row:'A',seatnum:[0,0,0,0,0]},
 result=[]
 inputseats.forEach((customer) => {
 numofseats = customer
-//if (enoughSeatspresent(numofseats)){
+
+//console.log(enoughSeatspresent(numofseats,seatmap))
+if(enoughSeatspresent){
+
     resultOnecustomer = []
 while (numofseats>0){
     seatmap.forEach((eachrow) => {
@@ -25,34 +28,23 @@ while (numofseats>0){
     })
 }
 result.push(resultOnecustomer.toString())
+}
 })
 
-/*
-
-if (customerseat==1)    {
-
-    result.push(seatmap.row+seatmap.seatnum[0])
-   
-    seatmap.seatno[0] =filled
-
-    console.log(seatmap)
-}  
-else {
-    result.push( seatmap.row+Object.keys(seatmap.seatno[0])+' '+
-    seatmap.row+Object.keys(seatmap.seatno[1]))
-}  
-})*/
-//console.log(seatmap)
 return result
 }
-/*
 
-enoughSeatspresent((numofseats) => {
+
+const enoughSeatspresent = (numofseatsP,seatmapP) => {
     seatsfree = 0;
-    seatmap.forEach((row) =>{
-        seatsfree += row.filter((seatnum) => seatnum==0)
+    seatmapP.forEach((rowP) => {
+    
+        seatsfree += rowP.seatnum.filter((free) => free==0).length
     })
-    if (seatsfree ==numofseats)
+
+    
+    console.log(seatsfree)
+    if (seatsfree >= numofseats)
     {
         return true
     }
@@ -61,5 +53,5 @@ enoughSeatspresent((numofseats) => {
     // set error indicator
     }
 
-})*/
+}
 module.exports = main
